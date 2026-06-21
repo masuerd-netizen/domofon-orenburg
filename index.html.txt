@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Изготовление домофонных ключей Оренбург | Сделать дубликат ключа с выездом</title>
+    <meta name="description" content="Заказать изготовление домофонных ключей в Оренбурге с выездом мастера к дому. Делаем дубликаты и копии ключей от подъезда за 1 минуту. Низкие цены, проверка на месте!">
+    <meta name="keywords" content="изготовление домофонных ключей оренбург, сделать дубликат ключа от подъезда, копия ключа от домофона цена, заказать ключ от домофона оренбург, сделать ключ таблетку рядом со мной, выездной мастер ключей">
+    
+    <!-- Микроразметка Schema.org для локального SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Домофон-Мастер Оренбург",
+      "description": "Срочное изготовление и дублирование домофонных ключей с выездом по Оренбургу.",
+      "telephone": "+7 (950) 189-64-91", 
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Оренбург",
+        "addressRegion": "Оренбургская область",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "51.7681",
+          "longitude": "55.0970"
+        },
+        "description": "Обслуживание по всему городу Оренбург"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #ffcc00; 
+            --dark-color: #1a1a1a;
+            --light-color: #f4f4f4;
+            --text-color: #333;
+            --telegram-color: #0088cc; 
+            --call-color: #007bff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #e0e0e0;
+        }
+
+        .fast-contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .btn-fast {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+        .btn-fast.call { background-color: var(--call-color); }
+        .btn-fast.tg { background-color: var(--telegram-color); }
+        .btn-fast:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        .site-form {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 450px;
+            margin: 0 auto;
+            color: var(--dark-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .site-form h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .policy-privacy {
+            display: flex !important;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 15px;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .policy-privacy input {
+            margin-top: 4px;
+            cursor: pointer;
+            width: auto;
+        }
+
+        .policy-privacy span {
+            font-size: 11px;
+            line-height: 1.3;
+            color: #555;
+            text-align: left;
+        }
+
+        .submit-button {
+            width: 100%;
+            background-color: var(--dark-color);
+            color: var(--primary-color);
+            padding: 14px;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #333;
+        }
+
+        .advantages {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .key-types {
+            background-color: #fff;
+            padding: 60px 20px;
+        }
+
+        .key-types-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .key-list {
+            list-style: none;
+            font-size: 18px;
+        }
+
+        .key-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .key-list li::before {
+            content: '🔑';
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .action-block {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 3px solid var(--primary-color);
+        }
+        
+        .action-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .action-block .site-form {
+            background: #fff;
+            margin-top: 30px;
+        }
+
+        .action-block .submit-button {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        .action-block .submit-button:hover {
+            background-color: #e6b800;
+        }
+
+        .action-block .policy-privacy span {
+            color: #666;
+        }
+
+        .contacts {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contacts p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .contacts-buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: #777;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 24px; }
+            .hero p { font-size: 15px; }
+            .fast-contact-buttons { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto 20px; }
+            .btn-fast { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">🔑 Домофон-Мастер Оренбург</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Изготовление домофонных ключей в Оренбурге <span>с выездом</span></h1>
+            <p>Не нужно никуда идти! Приеду к вашему дому или офису и сделаю дубликат ключа-таблетки или бесконтактного брелока за 1 минуту прямо при вас!</p>
+            
+            <!-- КНОПКИ МГНОВЕННОЙ СВЯЗИ ДЛЯ МОБИЛЬНЫХ -->
+            <div class="fast-contact-buttons">
+                <a href="tel:+79501896491" class="btn-fast call">📞 Позвонить мастеру</a>
+                <a href="https://t.me/msqrad" target="_blank" class="btn-fast tg">💬 Написать в Telegram</a>
+            </div>
+
+            <!-- ФОРМА 1: На главном экране -->
+            <form onsubmit="sendToTelegram(event, this)" class="site-form">
+                <h3>Вызвать мастера на адрес</h3>
+                <div class="form-group">
+                    <label for="phone1">Ваш телефон:</label>
+                    <input type="tel" id="phone1" name="phone" placeholder="+7 (999) 000-00-00" required>
+                </div>
+                <div class="form-group">
+                    <label for="address1">Адрес доставки:</label>
+                    <input type="text" id="address1" name="address" placeholder="Улица, дом, подъезд" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantity1">Сколько нужно ключей (шт):</label>
+                    <input type="number" id="quantity1" name="quantity" min="1" value="1" required>
+                </div>
+                
+                <label class="policy-privacy">
+                    <input type="checkbox" required checked>
+                    <span>Я согласен на обработку персональных данных в соответствии с ФЗ-152 для обработки заказа.</span>
+                </label>
+
+                <button type="submit" class="submit-button">Оставить заявку</button>
+            </form>
+
+        </div>
+    </section>
+
+    <section class="advantages">
+        <h2 class="section-title">Срочное изготовление копий ключей для домофона</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🚀 Максимальная скорость</h3>
+                <p>Выезд по Оренбургу в удобное для вас время. Быстрое копирование ключа занимает ровно 1 минуту.</p>
+            </div>
+            <div class="card">
+                <h3>💰 Проверка на месте</h3>
+                <p>Ключ проверяется прямо на вашем домофоне сразу после изготовления. Вы платите только за работающий результат.</p>
+            </div>
+            <div class="card">
+                <h3>🤝 Выгода при объеме</h3>
+                <p>Нужно много ключей на всю семью, подъезд или сотрудников? Сделаю отличную скидку на общий заказ.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="key-types">
+        <div class="key-types-container">
+            <h2 class="section-title">Делаем любые виды домофонных ключей в Оренбурге</h2>
+            <ul class="key-list">
+                <li><strong>Контактные ключи</strong> (купить ключ «таблетку», «лузы» Cyfral, Dallas, Метаком)</li>
+                <li><strong>Бесконтактные брелоки</strong> (обычные пластиковые капли RFID, чип-ключи, Mifare 13.56 МГц)</li>
+                <li><strong>Современные смарт-карты</strong> и защищенные пропуска Дом.ру, Спутник, Цифрал</li>
+                <li>Копируем даже сложные ключи от подъезда, за которые не берутся в обычных мастерских</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="action-block">
+        <div class="action-container">
+            <h2>Быстрый заказ выездного мастера</h2>
+            <p style="color: #ccc; margin-top: 10px;">Заполните форму ниже, я свяжусь с вами в течение 5 минут для уточнения деталей.</p>
+            
+            <!-- ФОРМА 2: Нижняя -->
+            <form onsubmit="sendToTelegram(event, this)" class="site-form">
+                <div class="form-group">
+                    <label for="phone2">Ваш телефон:</label>
+                    <input type="tel" id="phone2" name="phone" placeholder="+7 (999) 000-00-00" required>
+                </div>
+                <div class="form-group">
+                    <label for="address2">Адрес доставки:</label>
+                    <input type="text" id="address2" name="address" placeholder="Улица, дом, подъезд" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantity2">Сколько нужно ключей (шт):</label>
+                    <input type="number" id="quantity2" name="quantity" min="1" value="1" required>
+                </div>
+                
+                <label class="policy-privacy">
+                    <input type="checkbox" required checked>
+                    <span>Я согласен на обработку персональных данных в соответствии с ФЗ-152 для обработки заказа.</span>
+                </label>
+
+                <button type="submit" class="submit-button">Вызвать мастера</button>
+            </form>
+
+        </div>
+    </section>
+
+    <section class="contacts">
+        <h2 class="section-title">Контакты выездной мастерской</h2>
+        <p><strong>📍 География работы:</strong> Все районы города Оренбург (выезд к вашему дому/офису)</p>
+        <p><strong>⏰ Время работы:</strong> Принимаю заявки ежедневно с 09:00 до 21:00</p>
+        <div class="contacts-buttons">
+             <a href="tel:+79501896491" class="btn-fast call">📞 Позвонить мастеру</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Служба выездного изготовления домофонных ключей в Оренбурге. Сделать копию ключа быстро и недорого.</p>
+    </footer>
+
+    <!-- СКРИПТ ОТПРАВКИ ЗАЯВОК В ТЕЛЕГРАМ -->
+    <script>
+        function sendToTelegram(event, form) {
+            event.preventDefault();
+
+            const p1 = '8069159175';
+            const p2 = ':AAHOJ0au1xxmS4-_irwHXK4FaSvAOFl-JQo';
+            const TELEGRAM_TOKEN = p1 + p2;
+            const TELEGRAM_CHAT_ID = '644993723';
+
+            const phone = form.querySelector('[name="phone"]').value;
+            const address = form.querySelector('[name="address"]').value;
+            const quantity = form.querySelector('[name="quantity"]').value;
+
+            const text = `🔔 **Новая заявка на КЛЮЧИ!**\n\n` +
+                         `📞 **Телефон:** ${phone}\n` +
+                         `📍 **Адрес:** ${address}\n` +
+                         `🔑 **Количество:** ${quantity} шт.`;
+
+            const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
+
+            fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: text,
+                    parse_mode: 'Markdown'
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Заявка успешно принята! Я свяжусь с вами в течение 5 минут.');
+                    form.reset();
+                } else {
+                    alert('Ошибка при отправке. Пожалуйста, воспользуйтесь кнопкой звонка.');
+                }
+            })
+            .catch(error => {
+                alert('Ошибка сети. Пожалуйста, позвоните нам напрямую.');
+            });
+        }
+    </script>
+
+</body>
+</html>
