@@ -66,6 +66,11 @@
             background-color: var(--light-color);
             color: var(--text-color);
             line-height: 1.6;
+            
+            /* Запрет выделения текста для защиты от копирования */
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         header {
@@ -94,7 +99,8 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            /* ТЕПЕРЬ КАРТИНКА ГРУЗИТСЯ НАПРЯМУЮ С ТВОЕГО САЙТА И ОТКРОЕТСЯ БЕЗ VPN */
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('./bg.jpg') no-repeat center center/cover;
             color: #fff;
             padding: 40px 20px;
             text-align: center;
