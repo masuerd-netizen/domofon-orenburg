@@ -53,6 +53,7 @@
             --text-color: #333;
             --telegram-color: #0088cc; 
             --call-color: #007bff;
+            --avito-color: #73b900;
         }
 
         * {
@@ -150,6 +151,7 @@
         }
         .btn-fast.call { background-color: var(--call-color); }
         .btn-fast.tg { background-color: var(--telegram-color); }
+        .btn-fast.avito { background-color: var(--avito-color); }
         .btn-fast:hover { transform: translateY(-2px); opacity: 0.9; }
 
         .site-form {
@@ -267,6 +269,14 @@
             font-size: 20px;
         }
 
+        .card a {
+            color: var(--telegram-color);
+            text-decoration: underline;
+        }
+        .card a:hover {
+            text-decoration: none;
+        }
+
         .key-types {
             background-color: #fff;
             padding: 60px 20px;
@@ -347,6 +357,8 @@
             margin-top: 25px;
             display: flex;
             justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         footer {
@@ -361,6 +373,7 @@
             .hero h1 { font-size: 24px; }
             .hero p { font-size: 15px; }
             .fast-contact-buttons { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto 20px; }
+            .contacts-buttons { flex-direction: column; width: 100%; max-width: 320px; margin: 25px auto 0; }
             .btn-fast { justify-content: center; }
         }
     </style>
@@ -383,6 +396,7 @@
             <div class="fast-contact-buttons">
                 <a href="tel:+79501896491" class="btn-fast call">📞 Позвонить мастеру</a>
                 <a href="https://t.me/msqrad" target="_blank" class="btn-fast tg">💬 Написать в Telegram</a>
+                <a href="https://www.avito.ru/orenburg/predlozheniya_uslug/vyezdnoy_dublikat_klyucha_domofona_8197653870" target="_blank" class="btn-fast avito">💚 Мы на Авито</a>
             </div>
 
             <!-- ФОРМА 1: На главном экране -->
@@ -424,8 +438,8 @@
                 <p>Каждая копия ключа проверяется прямо на вашем домофоне сразу после изготовления. Вы платите только за работающий результат.</p>
             </div>
             <div class="card">
-                <h3>🤝 Выгода при объеме</h3>
-                <p>Нужно много ключей на всю семью, подъезд или сотрудников? Сделаю отличную скидку на общий заказ.</p>
+                <h3>⭐ Профиль на Авито</h3>
+                <p>Работаю честно и открыто. Вы можете изучить реальные отзывы клиентов или заказать услугу напрямую через наш <a href="https://www.avito.ru/orenburg/predlozheniya_uslug/vyezdnoy_dublikat_klyucha_domofona_8197653870" target="_blank">объявление на Авито</a>.</p>
             </div>
         </div>
     </section>
@@ -484,6 +498,7 @@
         <p><strong>⏰ Время работы:</strong> Принимаю заявки ежедневно с 09:00 до 21:00</p>
         <div class="contacts-buttons">
              <a href="tel:+79501896491" class="btn-fast call">📞 Позвонить мастеру</a>
+             <a href="https://www.avito.ru/orenburg/predlozheniya_uslug/vyezdnoy_dublikat_klyucha_domofona_8197653870" target="_blank" class="btn-fast avito">💚 Отзывы на Авито</a>
         </div>
     </section>
 
