@@ -17,12 +17,13 @@
             for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
             k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
         })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110221369', 'ym');
-
         ym(110221369, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/110221369" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-    
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/110221369" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+
+    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -104,6 +105,23 @@
             color: var(--primary-color);
         }
 
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: #bbb;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
         .hero {
             background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://static.tildacdn.com/tild6165-6463-4966-b461-383164333830/lotus-design-n-print.jpg') no-repeat center center/cover;
             color: #fff;
@@ -153,6 +171,7 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             transition: 0.3s;
         }
+
         .btn-fast.call { background-color: var(--call-color); }
         .btn-fast.tg { background-color: var(--telegram-color); }
         .btn-fast.avito { background-color: var(--avito-color); }
@@ -277,6 +296,7 @@
             color: var(--telegram-color);
             text-decoration: underline;
         }
+
         .card a:hover {
             text-decoration: none;
         }
@@ -296,6 +316,76 @@
             color: #555;
             margin-bottom: 30px;
             text-align: justify;
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: #fff;
+        }
+
+        .price-table td {
+            padding: 12px 10px;
+            font-size: 16px;
+            border-bottom: 1px dashed #ccc;
+            vertical-align: bottom;
+        }
+
+        .price-table td:first-child {
+            text-align: left;
+            line-height: 1.3;
+        }
+
+        .price-table td:last-child {
+            text-align: right;
+            font-weight: bold;
+            white-space: nowrap;
+            width: 1%;
+        }
+
+        .price-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-free {
+            color: #73b900;
+        }
+
+        .faq-section {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            padding: 18px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .faq-item summary:hover {
+            background-color: #fcfcfc;
+            color: var(--primary-color);
+        }
+
+        .faq-content {
+            padding: 0 20px 20px 20px;
+            color: #555;
+            font-size: 15px;
+            line-height: 1.5;
         }
 
         .key-list {
@@ -323,7 +413,7 @@
             text-align: center;
             border-top: 3px solid var(--primary-color);
         }
-        
+
         .action-container {
             max-width: 700px;
             margin: 0 auto;
@@ -373,6 +463,10 @@
             font-size: 14px;
         }
 
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+        }
+
         @media (max-width: 600px) {
             .hero h1 { font-size: 24px; }
             .hero p { font-size: 15px; }
@@ -387,7 +481,12 @@
     <header>
         <div class="header-container">
             <div class="logo">🔑 Домофон56</div>
-            <div class="header-subtitle" style="font-size: 14px; color: #bbb; font-weight: 500; text-align: right;">Изготовление и дублирование ключей в Оренбурге</div>
+            <ul class="nav-menu">
+                <li><a href="/">Главная</a></li>
+                <li><a href="/prices/">Цены на ключи</a></li>
+                <li><a href="/mifare-rfid/">Технологии RFID / Mifare</a></li>
+                <li><a href="/reviews/">Отзывы</a></li>
+            </ul>
         </div>
     </header>
 
@@ -436,7 +535,7 @@
             </div>
             <div class="card">
                 <h3>💰 Проверка на месте</h3>
-                <p>Каждая копия ключа проверяется прямо на вашем домофоне сразу после изготовления. Вы плалят только за работающий результат.</p>
+                <p>Каждая копия ключа проверяется прямо на вашем домофоне сразу после изготовления. Вы платите только за работающий результат.</p>
             </div>
             <div class="card">
                 <h3>⭐ Профиль на Авито</h3>
@@ -455,24 +554,24 @@
 
             <div class="price-block" style="margin-bottom: 35px; background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 5px solid var(--primary-color);">
                 <h3 style="margin-bottom: 15px; font-size: 18px;">Цены на дубликаты ключей в Оренбурге:</h3>
-                <ul style="list-style: none; padding: 0; font-size: 16px;">
-                    <li style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px dashed #ccc; padding-bottom: 4px; gap: 10px;">
-                        <span style="text-align: left; line-height: 1.3;">Контактные ключи-таблетки (Dallas, Cyfral, Метаком)</span>
-                        <strong style="white-space: nowrap; font-size: 16px;">от 200 ₽</strong>
-                    </li>
-                    <li style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px dashed #ccc; padding-bottom: 4px; gap: 10px;">
-                        <span style="text-align: left; line-height: 1.3;">Электронные бесконтактные брелоки (RFID, Mifare)</span>
-                        <strong style="white-space: nowrap; font-size: 16px;">от 250 ₽</strong>
-                    </li>
-                    <li style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px dashed #ccc; padding-bottom: 4px; gap: 10px;">
-                        <span style="text-align: left; line-height: 1.3;">Смарт-карты и пропуска (Дом.ру, Спутник)</span>
-                        <strong style="white-space: nowrap; font-size: 16px;">от 300 ₽</strong>
-                    </li>
-                    <li style="margin-bottom: 0; display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 4px; gap: 10px;">
-                        <span style="text-align: left; line-height: 1.3;">Выезд мастера по городу при заказе от 3-х ключей</span>
-                        <span style="color: #73b900; font-weight: bold; white-space: nowrap; font-size: 16px;">БЕСПЛАТНО</span>
-                    </li>
-                </ul>
+                <table class="price-table">
+                    <tr>
+                        <td>Контактные ключи-таблетки (Dallas, Cyfral, Метаком)</td>
+                        <td>от 200 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Электронные бесконтактные брелоки (RFID, Mifare)</td>
+                        <td>от 250 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Смарт-карты и пропуска (Дом.ру, Спутник)</td>
+                        <td>от 300 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Выезд мастера по городу при заказе от 3-х ключей</td>
+                        <td class="price-free">БЕСПЛАТНО</td>
+                    </tr>
+                </table>
             </div>
 
             <h3 style="margin-bottom: 15px; font-size: 20px;">Какие виды домофонных ключей мы делаем:</h3>
@@ -482,6 +581,31 @@
                 <li><strong>Современные смарт-карты</strong> (копии карт и пропусков для новых домофонов Дом.ру, Спутник, Цифрал)</li>
             </ul>
         </div>
+    </section>
+
+    <section class="faq-section">
+        <h2 class="section-title">Вопросы и ответы по изготовлению ключей</h2>
+        
+        <details class="faq-item">
+            <summary>Сколько времени занимает копирование ключа от подъезда?</summary>
+            <div class="faq-content">
+                <p>Сам процесс программирования нового чипа или таблетки на профессиональном дубликаторе занимает ровно 1 минуту. Мастер приезжает со всем необходимым оборудованием и заготовками, поэтому вся процедура от звонка до проверки готового дубликата проходит максимально оперативно прямо у вашего подъезда в Оренбурге.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Можно ли сделать дубликат ключа Mifare для домофонов Дом.ру или Спутник?</summary>
+            <div class="faq-content">
+                <p>Да, мы изготавливаем точные копии современных защищенных смарт-ключей и RFID-брелоков, работающих на частоте 13.56 МГц (включая системы Mifare, Спутник, Дом.ру). Благодаря использованию передового оборудования мы обходим криптографическую защиту и гарантируем стабильную работу дубликата.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>Как происходит проверка ключа и оплата услуг?</summary>
+            <div class="faq-content">
+                <p>Главный плюс работы с выездным мастером — вы проверяете работоспособность изготовленного дубликата ключа прямо на месте на своем домофоне. Оплата производится только после успешного тестирования. Никакого риска получить неработающий ключ, как это часто бывает в обычных мастерских.</p>
+            </div>
+        </details>
     </section>
 
     <section class="action-block">
@@ -524,7 +648,14 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Служба выездного изготовления ключей в Оренбурге. Сделать копию ключа быстро и недорого.</p>
+        <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <p>&copy; 2026 Служба выездного изготовления ключей в Оренбурге. Сделать копию ключа быстро и недорого.</p>
+            <ul style="list-style: none; display: flex; gap: 15px;">
+                <li><a href="/" style="color: #777; text-decoration: none;">Главная</a></li>
+                <li><a href="/prices/" style="color: #777; text-decoration: none;">Цены</a></li>
+                <li><a href="/mifare-rfid/" style="color: #777; text-decoration: none;">RFID</a></li>
+            </ul>
+        </div>
     </footer>
 
     <script>
@@ -540,9 +671,9 @@
             const address = form.querySelector('[name="address"]').value;
             const quantity = form.querySelector('[name="quantity"]').value;
 
-            const text = `🔔 **Новая заявка на КЛЮЧИ!**\n\n` +
-                         `📞 **Телефон:** ${phone}\n` +
-                         `📍 **Адрес:** ${address}\n` +
+            const text = `🔔 **Новая заявка на КЛЮЧИ!**\n\n` + 
+                         `📞 **Телефон:** ${phone}\n` + 
+                         `📍 **Адрес:** ${address}\n` + 
                          `🔑 **Количество:** ${quantity} шт.`;
 
             const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
@@ -569,6 +700,5 @@
             });
         }
     </script>
-
 </body>
 </html>
