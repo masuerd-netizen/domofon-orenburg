@@ -126,6 +126,11 @@
             color: var(--primary-color);
         }
 
+        /* Стили кнопки гамбургера (скрыта на ПК) */
+        .hamburger {
+            display: none;
+        }
+
         .hero {
             background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://static.tildacdn.com/tild6165-6463-4966-b461-383164333830/lotus-design-n-print.jpg') no-repeat center center/cover;
             color: #fff;
@@ -467,8 +472,73 @@
             font-size: 14px;
         }
 
+        /* Адаптивные стили для мобильных устройств */
         @media (max-width: 768px) {
-            .nav-menu { display: none; }
+            /* Настройка кнопки-гамбургера */
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 26px;
+                height: 18px;
+                cursor: pointer;
+                z-index: 1001;
+            }
+
+            .hamburger span {
+                display: block;
+                height: 3px;
+                width: 100%;
+                background-color: #fff;
+                border-radius: 3px;
+                transition: all 0.3s ease;
+            }
+
+            /* Превращаем меню в выдвижную панель */
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 260px;
+                height: 100vh;
+                background-color: var(--dark-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+                padding: 20px;
+                z-index: 1000;
+            }
+
+            /* Класс активации меню */
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-menu a {
+                font-size: 18px;
+                display: block;
+                padding: 10px 0;
+                color: #fff;
+            }
+
+            /* Анимация превращения гамбургера в крестик */
+            .hamburger.active span:nth-child(1) {
+                transform: translateY(7.5px) rotate(45deg);
+            }
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active span:nth-child(3) {
+                transform: translateY(-7.5px) rotate(-45deg);
+            }
         }
 
         @media (max-width: 600px) {
@@ -480,10 +550,20 @@
         }
     </style>
 </head>
-<body id="top"> <header>
+<body id="top"> 
+    <header>
         <div class="header-container">
             <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">🔑 Домофон56</div>
-            <ul class="nav-menu">
+            
+            <!-- Кнопка гамбургера для смартфонов -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Список меню (работает как на ПК, так и на мобильных) -->
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#top">Главная</a></li>
                 <li><a href="#prices">Цены на ключи</a></li>
                 <li><a href="#technologies">Технологии RFID / Mifare</a></li>
@@ -591,7 +671,7 @@
         <details class="faq-item">
             <summary>Сколько времени занимает копирование ключа от подъезда?</summary>
             <div class="faq-content">
-                <p>Сам процесс программирования нового чипа или таблетки на профессиональном дубликаторе занимает ровно 1 минуту. Мастер приезжает со всем необходимым оборудованием и заготовками, поэтому вся процедура от звонка до проверки готового дубликата проходит максимально оперативно прямо у вашего подъезда в Оренбурге.</p>
+                <p>Сам процесс программирования нового чипа или таблетки на профессиональном дубликаторе занимает ровно 1 минуту. Master приезжает со всем необходимым оборудованием и заготовками, поэтому вся процедура от звонка до проверки готового дубликата проходит максимально оперативно прямо у вашего подъезда в Оренбурге.</p>
             </div>
         </details>
 
@@ -661,6 +741,26 @@
     </footer>
 
     <script>
+        // Логика работы мобильного меню (гамбургера)
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const menuLinks = document.querySelectorAll('.nav-menu a');
+
+        // Открытие и закрытие шторки меню по клику на гамбургер
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Автоматическое закрытие шторки при клике на любой внутренний раздел
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Функция отправки формы в Telegram
         function sendToTelegram(event, form) {
             event.preventDefault();
 
