@@ -9,7 +9,6 @@
     
     <link rel="icon" type="image/png" sizes="512x512" href="./favicon.png">
 
-    <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){
             m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -23,7 +22,6 @@
         <div><img src="https://mc.yandex.ru/watch/110221369" style="position:absolute; left:-9999px;" alt="" /></div>
     </noscript>
 
-    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -68,6 +66,11 @@
             --avito-color: #73b900;
         }
 
+        /* Добавляем плавную прокрутку для всего сайта */
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -103,6 +106,7 @@
             font-size: 22px;
             font-weight: bold;
             color: var(--primary-color);
+            cursor: pointer;
         }
 
         .nav-menu {
@@ -476,23 +480,21 @@
         }
     </style>
 </head>
-<body>
-
-    <header>
+<body id="top"> <header>
         <div class="header-container">
-            <div class="logo">🔑 Домофон56</div>
+            <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">🔑 Домофон56</div>
             <ul class="nav-menu">
-                <li><a href="/">Главная</a></li>
-                <li><a href="/prices/">Цены на ключи</a></li>
-                <li><a href="/mifare-rfid/">Технологии RFID / Mifare</a></li>
-                <li><a href="/reviews/">Отзывы</a></li>
+                <li><a href="#top">Главная</a></li>
+                <li><a href="#prices">Цены на ключи</a></li>
+                <li><a href="#technologies">Технологии RFID / Mifare</a></li>
+                <li><a href="https://www.avito.ru/orenburg/predlozheniya_uslug/vyezdnoy_dublikat_klyucha_domofona_8197653870" target="_blank">Отзывы</a></li>
             </ul>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-container">
-            <h1>Где сделать <span>дубликат ключа</span> в Оренбурге с выездом?</h1>
+            <h1>Где сделать <span>дубликат ключа</span> in Оренбурге с выездом?</h1>
             <p>Не нужно искать мастерскую рядом! Делаем копии любых ключей за 1 минуту прямо при вас — от стандартных «таблеток» до современных Mifare и RFID брелоков</p>
             
             <div class="fast-contact-buttons">
@@ -544,7 +546,7 @@
         </div>
     </section>
 
-    <section class="key-types">
+    <section class="key-types" id="prices">
         <div class="key-types-container">
             <h2 class="section-title">Изготовление электронных и контактных ключей</h2>
             
@@ -574,7 +576,7 @@
                 </table>
             </div>
 
-            <h3 style="margin-bottom: 15px; font-size: 20px;">Какие виды домофонных ключей мы делаем:</h3>
+            <h3 id="technologies" style="margin-bottom: 15px; font-size: 20px; scroll-margin-top: 90px;">Какие виды домофонных ключей мы делаем:</h3>
             <ul class="key-list">
                 <li><strong>Контактные электронные ключи</strong> (стандартные «таблетки», «лузы» для домофонов Cyfral, Dallas, Метаком)</li>
                 <li><strong>Бесконтактные RFID-брелоки</strong> (пластиковые капли, чип-ключи, защищенные метки Mifare 13.56 МГц)</li>
@@ -651,9 +653,9 @@
         <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
             <p>&copy; 2026 Служба выездного изготовления ключей в Оренбурге. Сделать копию ключа быстро и недорого.</p>
             <ul style="list-style: none; display: flex; gap: 15px;">
-                <li><a href="/" style="color: #777; text-decoration: none;">Главная</a></li>
-                <li><a href="/prices/" style="color: #777; text-decoration: none;">Цены</a></li>
-                <li><a href="/mifare-rfid/" style="color: #777; text-decoration: none;">RFID</a></li>
+                <li><a href="#top" style="color: #777; text-decoration: none;">Главная</a></li>
+                <li><a href="#prices" style="color: #777; text-decoration: none;">Цены</a></li>
+                <li><a href="#technologies" style="color: #777; text-decoration: none;">RFID</a></li>
             </ul>
         </div>
     </footer>
