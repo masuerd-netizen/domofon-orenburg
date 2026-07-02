@@ -494,27 +494,27 @@
                 transition: all 0.3s ease;
             }
 
-            /* Превращаем меню в выдвижную панель */
+            /* Превращаем меню в компактный выпадающий блок */
             .nav-menu {
                 position: fixed;
-                top: 0;
+                top: 70px; /* Отступ сверху, чтобы меню выпадало прямо под шапкой */
                 right: -100%;
-                width: 260px;
-                height: 100vh;
+                width: 240px;
+                height: auto; /* Высота подстраивается под контент, больше не на весь экран */
                 background-color: var(--dark-color);
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
-                gap: 30px;
+                gap: 15px;
                 transition: right 0.3s ease;
-                box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+                box-shadow: 0 4px 15px rgba(0,0,0,0.4);
                 padding: 20px;
+                border-radius: 12px; /* Красивые скругленные углы */
                 z-index: 1000;
             }
 
-            /* Класс активации меню */
+            /* Класс активации меню (выезжает на 15px от правого края) */
             .nav-menu.active {
-                right: 0;
+                right: 15px;
             }
 
             .nav-menu li {
@@ -523,10 +523,15 @@
             }
 
             .nav-menu a {
-                font-size: 18px;
+                font-size: 16px;
                 display: block;
-                padding: 10px 0;
+                padding: 8px 0;
                 color: #fff;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Легкое разделение пунктов */
+            }
+
+            .nav-menu li:last-child a {
+                border-bottom: none; /* Убираем полосу у последнего пункта */
             }
 
             /* Анимация превращения гамбургера в крестик */
