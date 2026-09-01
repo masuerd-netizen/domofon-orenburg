@@ -10,13 +10,21 @@
     <link rel="icon" type="image/png" sizes="512x512" href="./favicon.png">
 
     <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110221369', 'ym');
-        ym(110221369, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+        // Яндекс.Метрика запускается только после согласия пользователя на cookie
+        // (см. плашку внизу сайта и раздел "Файлы cookie" в политике конфиденциальности).
+        function loadYandexMetrika() {
+            (function(m,e,t,r,i,k,a){
+                m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                m[i].l=1*new Date();
+                for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+            })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110221369', 'ym');
+            ym(110221369, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+        }
+
+        if (localStorage.getItem('cookieConsent') === 'accepted') {
+            loadYandexMetrika();
+        }
     </script>
     <noscript>
         <div><img src="https://mc.yandex.ru/watch/110221369" style="position:absolute; left:-9999px;" alt="" /></div>
@@ -186,80 +194,6 @@
         .btn-fast.avito { background-color: var(--avito-color); }
         .btn-fast:hover { transform: translateY(-2px); opacity: 0.9; }
 
-        .site-form {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 25px;
-            border-radius: 8px;
-            max-width: 450px;
-            margin: 0 auto;
-            color: var(--dark-color);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .site-form h3 {
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        .policy-privacy {
-            display: flex !important;
-            align-items: flex-start;
-            gap: 8px;
-            margin-bottom: 15px;
-            user-select: none;
-            cursor: pointer;
-        }
-
-        .policy-privacy input {
-            margin-top: 4px;
-            cursor: pointer;
-            width: auto;
-        }
-
-        .policy-privacy span {
-            font-size: 11px;
-            line-height: 1.3;
-            color: #555;
-            text-align: left;
-        }
-
-        .submit-button {
-            width: 100%;
-            background-color: var(--dark-color);
-            color: var(--primary-color);
-            padding: 14px;
-            border: none;
-            border-radius: 4px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .submit-button:hover {
-            background-color: #333;
-        }
-
         .advantages {
             padding: 60px 20px;
             max-width: 1100px;
@@ -428,24 +362,6 @@
             margin: 0 auto;
         }
 
-        .action-block .site-form {
-            background: #fff;
-            margin-top: 30px;
-        }
-
-        .action-block .submit-button {
-            background-color: var(--primary-color);
-            color: var(--dark-color);
-        }
-
-        .action-block .submit-button:hover {
-            background-color: #e6b800;
-        }
-
-        .action-block .policy-privacy span {
-            color: #666;
-        }
-
         .contacts {
             padding: 60px 20px;
             text-align: center;
@@ -470,6 +386,140 @@
             text-align: center;
             padding: 20px;
             font-size: 14px;
+        }
+
+        /* Плашка о cookies */
+        .cookie-banner {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+            background: var(--dark-color);
+            color: #ddd;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+        }
+
+        .cookie-banner p {
+            margin: 0;
+            font-size: 13px;
+            max-width: 700px;
+            line-height: 1.5;
+        }
+
+        .cookie-banner a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .cookie-banner-actions {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .cookie-btn {
+            border: none;
+            border-radius: 4px;
+            padding: 10px 18px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .cookie-btn.accept {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        .cookie-btn.decline {
+            background-color: transparent;
+            color: #ccc;
+            border: 1px solid #555;
+        }
+
+        /* Модальное окно с политикой */
+        .policy-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            padding: 20px;
+            align-items: flex-start;
+            justify-content: center;
+            overflow-y: auto;
+        }
+
+        .policy-modal-overlay.active {
+            display: flex;
+        }
+
+        .policy-modal {
+            background: #fff;
+            color: var(--text-color);
+            max-width: 800px;
+            width: 100%;
+            border-radius: 8px;
+            padding: 30px 30px 20px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .policy-modal h2 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: var(--dark-color);
+        }
+
+        .policy-modal h3 {
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-size: 17px;
+            color: var(--dark-color);
+        }
+
+        .policy-modal p, .policy-modal li {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .policy-modal ul {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .policy-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--light-color);
+            border: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .footer-policy-links {
+            margin-top: 8px;
+        }
+
+        .footer-policy-links a {
+            color: #999;
+            text-decoration: underline;
+            font-size: 13px;
+            cursor: pointer;
         }
 
         /* Адаптивные стили для мобильных устройств */
@@ -588,28 +638,6 @@
                 <a href="https://www.avito.ru/orenburg/predlozheniya_uslug/vyezdnoy_dublikat_klyucha_domofona_8197653870" target="_blank" class="btn-fast avito">💚 Мы на Авито</a>
             </div>
 
-            <form onsubmit="sendToTelegram(event, this)" class="site-form">
-                <h3>Вызвать мастера на адрес</h3>
-                <div class="form-group">
-                    <label for="phone1">Ваш телефон:</label>
-                    <input type="tel" id="phone1" name="phone" placeholder="+7 (999) 000-00-00" required>
-                </div>
-                <div class="form-group">
-                    <label for="address1">Адрес доставки:</label>
-                    <input type="text" id="address1" name="address" placeholder="Улица, дом, подъезд" required>
-                </div>
-                <div class="form-group">
-                    <label for="quantity1">Сколько нужно ключей (шт):</label>
-                    <input type="number" id="quantity1" name="quantity" min="1" value="1" required>
-                </div>
-                
-                <label class="policy-privacy">
-                    <input type="checkbox" required checked>
-                    <span>Я согласен на обработку персональных данных в соответствии с ФЗ-152 для обработки заказа.</span>
-                </label>
-
-                <button type="submit" class="submit-button">Оставить заявку</button>
-            </form>
         </div>
     </section>
 
@@ -698,29 +726,12 @@
     <section class="action-block">
         <div class="action-container">
             <h2>Быстрый заказ выездного мастера</h2>
-            <p style="color: #ccc; margin-top: 10px;">Заполните форму ниже, я свяжусь с вами в течение 5 минут для уточнения деталей.</p>
-            
-            <form onsubmit="sendToTelegram(event, this)" class="site-form">
-                <div class="form-group">
-                    <label for="phone2">Ваш телефон:</label>
-                    <input type="tel" id="phone2" name="phone" placeholder="+7 (999) 000-00-00" required>
-                </div>
-                <div class="form-group">
-                    <label for="address2">Адрес доставки:</label>
-                    <input type="text" id="address2" name="address" placeholder="Улица, дом, подъезд" required>
-                </div>
-                <div class="form-group">
-                    <label for="quantity2">Сколько нужно ключей (шт):</label>
-                    <input type="number" id="quantity2" name="quantity" min="1" value="1" required>
-                </div>
-                
-                <label class="policy-privacy">
-                    <input type="checkbox" required checked>
-                    <span>Я согласен на обработку персональных данных в соответствии с ФЗ-152 для обработки заказа.</span>
-                </label>
+            <p style="color: #ccc; margin-top: 10px;">Позвоните или напишите в Telegram — свяжусь с вами в течение 5 минут для уточнения деталей.</p>
 
-                <button type="submit" class="submit-button">Вызвать мастера</button>
-            </form>
+            <div class="fast-contact-buttons" style="margin-top: 20px;">
+                <a href="tel:+79501896491" class="btn-fast call">📞 Позвонить мастеру</a>
+                <a href="https://t.me/msqrad" target="_blank" class="btn-fast tg">💬 Написать в Telegram</a>
+            </div>
         </div>
     </section>
 
@@ -736,7 +747,12 @@
 
     <footer>
         <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-            <p>&copy; 2026 Служба выездного изготовления ключей в Оренбурге. Сделать копию ключа быстро и недорого.</p>
+            <div>
+                <p>&copy; 2026 Служба выездного изготовления ключей в Оренбурге. Сделать копию ключа быстро и недорого.</p>
+                <p class="footer-policy-links">
+                    <a onclick="openPolicyModal()">Политика конфиденциальности и обработки cookie</a>
+                </p>
+            </div>
             <ul style="list-style: none; display: flex; gap: 15px;">
                 <li><a href="#top" style="color: #777; text-decoration: none;">Главная</a></li>
                 <li><a href="#prices" style="color: #777; text-decoration: none;">Цены</a></li>
@@ -744,6 +760,96 @@
             </ul>
         </div>
     </footer>
+
+    <!-- Плашка о cookies -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>
+            Мы используем файлы cookie и сервис веб-аналитики Яндекс.Метрика для улучшения работы сайта и анализа посещаемости.
+            Часть данных может передаваться и обрабатываться на серверах Яндекса. Продолжая пользоваться сайтом, вы соглашаетесь
+            с их использованием. Подробнее — в <a onclick="openPolicyModal()">политике обработки данных</a>.
+        </p>
+        <div class="cookie-banner-actions">
+            <button class="cookie-btn accept" onclick="acceptCookies()">Хорошо, принимаю</button>
+            <button class="cookie-btn decline" onclick="declineCookies()">Отклонить необязательные</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно: Политика конфиденциальности и cookie -->
+    <div class="policy-modal-overlay" id="policyModalOverlay">
+        <div class="policy-modal">
+            <button class="policy-modal-close" onclick="closePolicyModal()">✕</button>
+            <h2>Политика конфиденциальности и обработки данных</h2>
+            <p>Дата последнего обновления: 01.09.2026</p>
+
+            <h3>1. Общие положения</h3>
+            <p>
+                Настоящая Политика определяет порядок обработки данных посетителей сайта «Домофон56» (далее — «Сайт»,
+                оператор — физическое лицо / ИП, оказывающее услуги по изготовлению дубликатов ключей в Оренбурге, далее — «Оператор»).
+                Сайт не содержит форм для отправки заявок и не собирает от пользователей персональные данные (имя, телефон, адрес)
+                через какие-либо интерактивные элементы. Связь с мастером осуществляется напрямую по телефону, через Telegram
+                или через объявление на Авито — в этом случае обработка ваших данных регулируется правилами соответствующего
+                сервиса связи (оператора сотовой связи, Telegram, Авито).
+            </p>
+
+            <h3>2. Какие данные собираются автоматически</h3>
+            <p>При посещении Сайта автоматически может собираться техническая информация:</p>
+            <ul>
+                <li>IP-адрес и приблизительное местоположение;</li>
+                <li>тип и версия браузера, операционная система, разрешение экрана;</li>
+                <li>страницы, которые вы посещали, время на сайте, источник перехода (referrer);</li>
+                <li>действия на странице: клики, скроллинг, движения курсора (технология Вебвизор);</li>
+                <li>файлы cookie и идентификаторы сессии.</li>
+            </ul>
+            <p>Эти данные обезличены и не позволяют напрямую идентифицировать личность пользователя.</p>
+
+            <h3>3. Файлы cookie</h3>
+            <p>
+                Сайт использует файлы cookie — небольшие текстовые файлы, сохраняемые в вашем браузере. Они применяются для:
+            </p>
+            <ul>
+                <li>корректной работы и запоминания настроек Сайта;</li>
+                <li>веб-аналитики и статистики посещаемости (сервис Яндекс.Метрика — счётчик, Вебвизор, карта кликов);</li>
+                <li>оценки эффективности рекламных кампаний.</li>
+            </ul>
+            <p>
+                Вы можете в любой момент отключить cookie в настройках своего браузера или отклонить необязательные cookie
+                через плашку внизу сайта. Отключение cookie может ограничить некоторые функции Сайта, но не повлияет
+                на возможность позвонить или написать мастеру напрямую.
+            </p>
+
+            <h3>4. Веб-аналитика (Яндекс.Метрика)</h3>
+            <p>
+                Для анализа поведения посетителей используется сервис «Яндекс.Метрика» (правообладатель — ООО «ЯНДЕКС»).
+                Сервис собирает обезличенные данные о действиях на Сайте по технологиям cookie и веб-маяков. Обработка данных
+                сервисом Яндекс.Метрика осуществляется в соответствии с
+                <a href="https://yandex.ru/legal/confidential/" target="_blank" rel="noopener">политикой конфиденциальности Яндекса</a>.
+            </p>
+
+            <h3>5. Трансграничная передача данных</h3>
+            <p>
+                В связи с использованием сторонних сервисов (веб-аналитика, мессенджеры, размещение сайта на хостинге/CDN)
+                часть обезличенных технических данных может обрабатываться на серверах, расположенных в том числе за
+                пределами Российской Федерации. Оператор принимает разумные меры для того, чтобы такая передача данных
+                осуществлялась только операторами, обеспечивающими адекватный уровень защиты информации, и только в объёме,
+                необходимом для технического функционирования Сайта и аналитики. Персональные данные (ФИО, телефон, точный
+                адрес) через формы Сайта не собираются и, соответственно, трансгранично не передаются.
+            </p>
+
+            <h3>6. Ваши права</h3>
+            <ul>
+                <li>запретить или ограничить использование cookie в настройках браузера;</li>
+                <li>запросить у Оператора информацию о том, какие обезличенные данные обрабатываются в связи с посещением Сайта;</li>
+                <li>направить Оператору обращение по вопросам обработки данных через контакты, указанные на Сайте.</li>
+            </ul>
+
+            <h3>7. Контакты</h3>
+            <p>
+                По всем вопросам, связанным с настоящей Политикой, вы можете связаться с нами по телефону
+                <a href="tel:+79501896491">+7 (950) 189-64-91</a> или в
+                <a href="https://t.me/msqrad" target="_blank" rel="noopener">Telegram</a>.
+            </p>
+        </div>
+    </div>
 
     <script>
         // Логика работы мобильного меню (гамбургера)
@@ -765,47 +871,43 @@
             });
         });
 
-        // Функция отправки формы в Telegram
-        function sendToTelegram(event, form) {
-            event.preventDefault();
+        // Плашка о cookies
+        const cookieBanner = document.getElementById('cookieBanner');
+        const cookieChoice = localStorage.getItem('cookieConsent');
 
-            const p1 = '8069159175';
-            const p2 = ':AAHOJ0au1xxmS4-_irwHXK4FaSvAOFl-JQo';
-            const TELEGRAM_TOKEN = p1 + p2;
-            const TELEGRAM_CHAT_ID = '644993723';
-
-            const phone = form.querySelector('[name="phone"]').value;
-            const address = form.querySelector('[name="address"]').value;
-            const quantity = form.querySelector('[name="quantity"]').value;
-
-            const text = `🔔 **Новая заявка на КЛЮЧИ!**\n\n` + 
-                         `📞 **Телефон:** ${phone}\n` + 
-                         `📍 **Адрес:** ${address}\n` + 
-                         `🔑 **Количество:** ${quantity} шт.`;
-
-            const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
-
-            fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    chat_id: TELEGRAM_CHAT_ID,
-                    text: text,
-                    parse_mode: 'Markdown'
-                })
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Заявка успешно принята! Я свяжусь с вами в течение 5 минут.');
-                    form.reset();
-                } else {
-                    alert('Ошибка при отправке. Пожалуйста, воспользуйтесь кнопкой звонка.');
-                }
-            })
-            .catch(error => {
-                alert('Ошибка сети. Пожалуйста, позвоните нам напрямую.');
-            });
+        if (!cookieChoice) {
+            cookieBanner.style.display = 'flex';
+        } else {
+            cookieBanner.style.display = 'none';
         }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieBanner.style.display = 'none';
+            if (typeof loadYandexMetrika === 'function') {
+                loadYandexMetrika();
+            }
+        }
+
+        function declineCookies() {
+            // Отклонение необязательных cookie: Яндекс.Метрика на этом устройстве не запускается
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieBanner.style.display = 'none';
+        }
+
+        // Модальное окно с политикой
+        function openPolicyModal() {
+            document.getElementById('policyModalOverlay').classList.add('active');
+        }
+
+        function closePolicyModal() {
+            document.getElementById('policyModalOverlay').classList.remove('active');
+        }
+
+        document.getElementById('policyModalOverlay').addEventListener('click', (e) => {
+            if (e.target.id === 'policyModalOverlay') closePolicyModal();
+        });
+
     </script>
 </body>
 </html>
