@@ -1,0 +1,539 @@
+        :root {
+            --primary-color: #ffcc00; 
+            --dark-color: #1a1a1a;
+            --light-color: #f4f4f4;
+            --text-color: #333;
+            --telegram-color: #0088cc; 
+            --call-color: #007bff;
+            --avito-color: #73b900;
+        }
+
+        /* Добавляем плавную прокрутку для всего сайта */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: #bbb;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Стили кнопки гамбургера (скрыта на ПК) */
+        .hamburger {
+            display: none;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://static.tildacdn.com/tild6165-6463-4966-b461-383164333830/lotus-design-n-print.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #e0e0e0;
+        }
+
+        .fast-contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .btn-fast {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .btn-fast.call { background-color: var(--call-color); }
+        .btn-fast.tg { background-color: var(--telegram-color); }
+        .btn-fast.avito { background-color: var(--avito-color); }
+        .btn-fast:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        .advantages {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .card a {
+            color: var(--telegram-color);
+            text-decoration: underline;
+        }
+
+        .card a:hover {
+            text-decoration: none;
+        }
+
+        .key-types {
+            background-color: #fff;
+            padding: 60px 20px;
+        }
+
+        .key-types-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .seo-text {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: #fff;
+        }
+
+        .price-table td {
+            padding: 12px 10px;
+            font-size: 16px;
+            border-bottom: 1px dashed #ccc;
+            vertical-align: bottom;
+        }
+
+        .price-table td:first-child {
+            text-align: left;
+            line-height: 1.3;
+        }
+
+        .price-table td:last-child {
+            text-align: right;
+            font-weight: bold;
+            white-space: nowrap;
+            width: 1%;
+        }
+
+        .price-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-free {
+            color: #73b900;
+        }
+
+        .faq-section {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            padding: 18px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .faq-item summary:hover {
+            background-color: #fcfcfc;
+            color: var(--primary-color);
+        }
+
+        .faq-content {
+            padding: 0 20px 20px 20px;
+            color: #555;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .key-list {
+            list-style: none;
+            font-size: 18px;
+        }
+
+        .key-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .key-list li::before {
+            content: '🔑';
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .action-block {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 3px solid var(--primary-color);
+        }
+
+        .action-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contacts {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contacts p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .contacts-buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: #777;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* Плашка о cookies */
+        .cookie-banner {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+            background: var(--dark-color);
+            color: #ddd;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+        }
+
+        .cookie-banner p {
+            margin: 0;
+            font-size: 13px;
+            max-width: 700px;
+            line-height: 1.5;
+        }
+
+        .cookie-banner a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .cookie-banner-actions {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .cookie-btn {
+            border: none;
+            border-radius: 4px;
+            padding: 10px 18px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .cookie-btn.accept {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+
+        .cookie-btn.decline {
+            background-color: transparent;
+            color: #ccc;
+            border: 1px solid #555;
+        }
+
+        /* Модальное окно с политикой */
+        .policy-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            padding: 20px;
+            align-items: flex-start;
+            justify-content: center;
+            overflow-y: auto;
+        }
+
+        .policy-modal-overlay.active {
+            display: flex;
+        }
+
+        .policy-modal {
+            background: #fff;
+            color: var(--text-color);
+            max-width: 800px;
+            width: 100%;
+            border-radius: 8px;
+            padding: 30px 30px 20px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .policy-modal h2 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: var(--dark-color);
+        }
+
+        .policy-modal h3 {
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-size: 17px;
+            color: var(--dark-color);
+        }
+
+        .policy-modal p, .policy-modal li {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .policy-modal ul {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .policy-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--light-color);
+            border: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .footer-policy-links {
+            margin-top: 8px;
+        }
+
+        .footer-policy-links a {
+            color: #999;
+            text-decoration: underline;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        /* Адаптивные стили для мобильных устройств */
+        @media (max-width: 768px) {
+            /* Настройка кнопки-гамбургера */
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 26px;
+                height: 18px;
+                cursor: pointer;
+                z-index: 1001;
+            }
+
+            .hamburger span {
+                display: block;
+                height: 3px;
+                width: 100%;
+                background-color: #fff;
+                border-radius: 3px;
+                transition: all 0.3s ease;
+            }
+
+            /* Превращаем меню в компактный выпадающий блок */
+            .nav-menu {
+                position: fixed;
+                top: 70px; /* Отступ сверху, чтобы меню выпадало прямо под шапкой */
+                right: -100%;
+                width: 240px;
+                height: auto; /* Высота подстраивается под контент, больше не на весь экран */
+                background-color: var(--dark-color);
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                transition: right 0.3s ease;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+                padding: 20px;
+                border-radius: 12px; /* Красивые скругленные углы */
+                z-index: 1000;
+            }
+
+            /* Класс активации меню (выезжает на 15px от правого края) */
+            .nav-menu.active {
+                right: 15px;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-menu a {
+                font-size: 16px;
+                display: block;
+                padding: 8px 0;
+                color: #fff;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Легкое разделение пунктов */
+            }
+
+            .nav-menu li:last-child a {
+                border-bottom: none; /* Убираем полосу у последнего пункта */
+            }
+
+            /* Анимация превращения гамбургера в крестик */
+            .hamburger.active span:nth-child(1) {
+                transform: translateY(7.5px) rotate(45deg);
+            }
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active span:nth-child(3) {
+                transform: translateY(-7.5px) rotate(-45deg);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 24px; }
+            .hero p { font-size: 15px; }
+            .fast-contact-buttons { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto 20px; }
+            .contacts-buttons { flex-direction: column; width: 100%; max-width: 320px; margin: 25px auto 0; }
+            .btn-fast { justify-content: center; }
+        }
